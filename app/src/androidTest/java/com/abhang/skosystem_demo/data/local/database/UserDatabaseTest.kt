@@ -59,7 +59,7 @@ class UserDatabaseTest: TestCase() {
 
     @Test
     fun writeAndReadMultipleUser() = runBlocking {
-        var mList = ArrayList<UserData>()
+        val mList = ArrayList<UserData>()
         for (i in 0..5){
             val user = UserData(
                 userId= i+1,

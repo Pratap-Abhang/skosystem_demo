@@ -3,8 +3,6 @@ package com.abhang.skosystem_demo.presentation.user_data_view
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isVisible
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.abhang.skosystem_demo.databinding.UserDataItemBinding
@@ -15,7 +13,7 @@ import com.bumptech.glide.Glide
 class UserAdapter(
     private val context: Context,
     private val onClickListener: (id: Int)->Unit
-) : ListAdapter<UserData, UserAdapter.ViewHolder>(DiffCallback()) {
+) : ListAdapter<UserData, UserAdapter.ViewHolder>(DiffCallback<UserData>()) {
 
     class ViewHolder(private val binding: UserDataItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(userData: UserData, context: Context, onClickListener: (id: Int) -> Unit){
@@ -41,18 +39,5 @@ class UserAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(userData = getItem(position),context= context, onClickListener)
-    }
-
-
-
-    class DiffCallback: DiffUtil.ItemCallback<UserData>() {
-        override fun areItemsTheSame(oldItem: UserData, newItem: UserData): Boolean {
-            return oldItem.userId==newItem.userId
-        }
-
-        override fun areContentsTheSame(oldItem: UserData, newItem: UserData): Boolean {
-            return oldItem.equals(newItem)
-        }
-
     }
 }

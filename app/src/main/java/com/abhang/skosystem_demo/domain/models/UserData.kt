@@ -2,7 +2,6 @@ package com.abhang.skosystem_demo.domain.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.abhang.skosystem_demo.data.data_soure.user_data_dto.UserDTO
 import com.abhang.skosystem_demo.utils.Constants
 
 @Entity(tableName = Constants.DB_TABLE_NAME)

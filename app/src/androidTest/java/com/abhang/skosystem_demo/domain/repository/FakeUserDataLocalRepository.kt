@@ -1,7 +1,5 @@
 package com.abhang.skosystem_demo.domain.repository
 
-import com.abhang.skosystem_demo.data.data_soure.user_data_dto.UserDTO
-import com.abhang.skosystem_demo.data.data_soure.user_data_dto.UserDataDTO
 import com.abhang.skosystem_demo.domain.models.UserData
 
 class FakeUserDataLocalRepository: UserDataLocalRepository {
@@ -29,7 +27,7 @@ class FakeUserDataLocalRepository: UserDataLocalRepository {
 
     }
 
-    override suspend fun getUserData(limit: Int, page: Int): List<UserData> {
+    override suspend fun getUserData(limit: Int, offset: Int): List<UserData> {
         return getData()
     }
 

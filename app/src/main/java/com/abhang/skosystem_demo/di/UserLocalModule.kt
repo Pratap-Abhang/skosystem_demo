@@ -4,10 +4,7 @@ import android.content.Context
 import com.abhang.skosystem_demo.data.local.dao.UserDao
 import com.abhang.skosystem_demo.data.local.database.UserDatabase
 import com.abhang.skosystem_demo.data.local.repository.UserDataLocalRepositoryImpl
-import com.abhang.skosystem_demo.data.remote.network.NetworkApiService
-import com.abhang.skosystem_demo.data.remote.repository.UserDataRepositoryImpl
 import com.abhang.skosystem_demo.domain.repository.UserDataLocalRepository
-import com.abhang.skosystem_demo.domain.repository.UserDataRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
